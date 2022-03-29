@@ -1,13 +1,10 @@
-import 'package:another_flushbar/flushbar.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_ddd/application/auth/sign_in_form/bloc/sign_in_form_bloc.dart';
-import 'package:notes_ddd/infrastructure/auth/firebase_auth_facade.dart';
 
 class SignInForm extends StatelessWidget {
-  const SignInForm(FirebaseAuthFacade firebaseAuthFacade, {Key? key})
-      : super(key: key);
+  const SignInForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
