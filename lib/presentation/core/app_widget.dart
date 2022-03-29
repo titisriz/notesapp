@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_ddd/presentation/sign_in/sign_in_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -7,8 +8,8 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+      title: 'Notes',
+      theme: ThemeData.light().copyWith(
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -18,9 +19,17 @@ class AppWidget extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.green[800],
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Colors.blueAccent),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SignInPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
