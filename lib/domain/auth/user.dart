@@ -4,8 +4,8 @@ import 'package:notes_ddd/domain/auth/value_objects.dart';
 part 'user.freezed.dart';
 
 @freezed
-abstract class UserModel with _$User {
+abstract class UserModel with _$UserModel {
   const factory UserModel({
     required UniqueId id,
-  }) = _User;
+  }) = _UserModel;
 }

@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$UserModelTearOff {
   const _$UserModelTearOff();
 
-  _User call({required UniqueId id}) {
-    return _User(
+  _UserModel call({required UniqueId id}) {
+    return _UserModel(
       id: id,
     );
   }
@@ -66,27 +66,28 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UserCopyWith<$Res> implements $UserModelCopyWith<$Res> {
-  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-      __$UserCopyWithImpl<$Res>;
+abstract class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
+  factory _$UserModelCopyWith(
+          _UserModel value, $Res Function(_UserModel) then) =
+      __$UserModelCopyWithImpl<$Res>;
   @override
   $Res call({UniqueId id});
 }
 
 /// @nodoc
-class __$UserCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
-    implements _$UserCopyWith<$Res> {
-  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-      : super(_value, (v) => _then(v as _User));
+class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
+    implements _$UserModelCopyWith<$Res> {
+  __$UserModelCopyWithImpl(_UserModel _value, $Res Function(_UserModel) _then)
+      : super(_value, (v) => _then(v as _UserModel));
 
   @override
-  _User get _value => super._value as _User;
+  _UserModel get _value => super._value as _UserModel;
 
   @override
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(_User(
+    return _then(_UserModel(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -97,8 +98,8 @@ class __$UserCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_User implements _User {
-  const _$_User({required this.id});
+class _$_UserModel implements _UserModel {
+  const _$_UserModel({required this.id});
 
   @override
   final UniqueId id;
@@ -112,7 +113,7 @@ class _$_User implements _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _User &&
+            other is _UserModel &&
             const DeepCollectionEquality().equals(other.id, id));
   }
 
@@ -122,16 +123,17 @@ class _$_User implements _User {
 
   @JsonKey(ignore: true)
   @override
-  _$UserCopyWith<_User> get copyWith =>
-      __$UserCopyWithImpl<_User>(this, _$identity);
+  _$UserModelCopyWith<_UserModel> get copyWith =>
+      __$UserModelCopyWithImpl<_UserModel>(this, _$identity);
 }
 
-abstract class _User implements UserModel {
-  const factory _User({required UniqueId id}) = _$_User;
+abstract class _UserModel implements UserModel {
+  const factory _UserModel({required UniqueId id}) = _$_UserModel;
 
   @override
   UniqueId get id;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
+  _$UserModelCopyWith<_UserModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }

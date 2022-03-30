@@ -43,5 +43,6 @@ class UniqueId extends ValueObject<String> {
     assert(uniqueId != null);
     return UniqueId._(right(uniqueId));
   }
+
   const UniqueId._(this.value);
 }
