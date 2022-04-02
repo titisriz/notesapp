@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_ddd/application/auth/auth_bloc.dart';
 import 'package:notes_ddd/injection.dart';
-import 'package:notes_ddd/presentation/sign_in/sign_in_page.dart';
 
 import '../routes/app_router.dart';
 

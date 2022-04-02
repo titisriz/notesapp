@@ -17,6 +17,7 @@ class SplashPage extends StatelessWidget {
           },
           authenticated: (_) {
             print('I am authenticated');
+            context.router.replace(const SignInRoute());
           },
           unauthenticated: (_) {
             print('Unauthenticated!');
