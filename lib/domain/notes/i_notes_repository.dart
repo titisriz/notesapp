@@ -5,10 +5,10 @@ import 'package:notes_ddd/domain/notes/note_failure.dart';
 
 abstract class INotesRepository {
   //TODO : watch notes
-  Stream<Either<KtList<Note>, NoteFailure>> watchAll();
+  Stream<Either<NoteFailure, KtList<Note>>> watchAll();
 
   //TODO : watch uncompleted notes
-  Stream<Either<KtList<Note>, NoteFailure>> watchUncompleted();
+  Stream<Either<NoteFailure, KtList<Note>>> watchUncompleted();
 
   // CUD
   Future<Either<NoteFailure, Unit>> create(Note note);

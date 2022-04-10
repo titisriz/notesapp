@@ -41,13 +41,13 @@ abstract class NoteDto implements _$NoteDto {
     return NoteDto.fromJson(doc.data);
   }
 
-  Note toDomain() {
-    return Note(
-        id: UniqueId.fromUniqueString(id!),
-        body: NoteBody(body),
-        color: NoteColor(Color(color)),
-        todos: List3(todos.map((e) => e.toDomain()).toImmutableList()));
-  }
+  // Note toDomain() {
+  //   return Note(
+  //       id: UniqueId.fromUniqueString(id!),
+  //       body: NoteBody(body),
+  //       color: NoteColor(Color(color)),
+  //       todos: List3(todos.map((e) => e.toDomain()).toImmutableList()));
+  // }
 }
 
 class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
