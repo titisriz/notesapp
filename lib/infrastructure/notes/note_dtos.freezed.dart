@@ -170,13 +170,14 @@ class __$NoteDtoCopyWithImpl<$Res> extends _$NoteDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteDto implements _NoteDto {
+class _$_NoteDto extends _NoteDto {
   const _$_NoteDto(
       {@JsonKey(ignore: true) this.id,
       required this.body,
       required this.color,
       required this.todos,
-      @ServerTimestampConverter() required this.serverTime});
+      @ServerTimestampConverter() required this.serverTime})
+      : super._();
 
   factory _$_NoteDto.fromJson(Map<String, dynamic> json) =>
       _$$_NoteDtoFromJson(json);
@@ -232,13 +233,14 @@ class _$_NoteDto implements _NoteDto {
   }
 }
 
-abstract class _NoteDto implements NoteDto {
+abstract class _NoteDto extends NoteDto {
   const factory _NoteDto(
       {@JsonKey(ignore: true) String? id,
       required String body,
       required int color,
       required List<TodoItemDto> todos,
       @ServerTimestampConverter() required FieldValue serverTime}) = _$_NoteDto;
+  const _NoteDto._() : super._();
 
   factory _NoteDto.fromJson(Map<String, dynamic> json) = _$_NoteDto.fromJson;
 

@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:notes_ddd/domain/core/value_object.dart';
@@ -20,6 +21,8 @@ abstract class NoteDto implements _$NoteDto {
     @ServerTimestampConverter() required FieldValue serverTime,
   }) = _NoteDto;
 
+  const NoteDto._();
+
   factory NoteDto.fromDomain(Note note) {
     return NoteDto(
         id: note.id.getOrCrash(),
@@ -37,17 +40,16 @@ abstract class NoteDto implements _$NoteDto {
   factory NoteDto.fromJson(Map<String, dynamic> json) =>
       _$NoteDtoFromJson(json);
 
-  factory NoteDto.fromFireStore(AsyncSnapshot doc) {
-    return NoteDto.fromJson(doc.data);
+  factory NoteDto.fromFireStore(QueryDocumentSnapshot doc) {
+    return NoteDto.fromJson(doc as Map<String, dynamic>);
   }
-
-  // Note toDomain() {
-  //   return Note(
-  //       id: UniqueId.fromUniqueString(id!),
-  //       body: NoteBody(body),
-  //       color: NoteColor(Color(color)),
-  //       todos: List3(todos.map((e) => e.toDomain()).toImmutableList()));
-  // }
+  Note toDomain() {
+    return Note(
+        id: UniqueId.fromUniqueString(id!),
+        body: NoteBody(body),
+        color: NoteColor(Color(color)),
+        todos: List3(todos.map((e) => e.toDomain()).toImmutableList()));
+  }
 }
 
 class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
